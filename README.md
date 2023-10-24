@@ -100,7 +100,8 @@ root@ip-10-0-1-115:/var/www# sudo chmod -R 2771 dev/
 rm /var/www/dev/index.html
 cp -r * /var/www/dev/
 
- 
+ ![image](https://github.com/Aseemakram19/website-ci-cd-pipline/assets/113539818/365d7197-1277-409c-89d1-26785de4fe25)
+
 
 Create a webhook for auto CICD
 Webhooks / Manage webhook
@@ -131,3 +132,4 @@ Pull request assigned, auto merge disabled, auto merge enabled, closed, converte
  Pushes
 Git push to a repository.
 unresolved.
+![image](https://github.com/Aseemakram19/website-ci-cd-pipline/assets/113539818/1c7e6416-a802-43d2-8de7-cdd7da1cff53)
