@@ -1,0 +1,124 @@
+@media (max-width: 1120px) {
+    .contact_section .col-lg-4.offset-lg-2.col-md-5.offset-md-1 {
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header_section .call_btn {
+        display: none;
+    }
+
+    .custom_menu-container {
+        display: none;
+    }
+
+    .slider_section {
+        margin: 0;
+    }
+
+    .client_section .client_container {
+        flex-direction: column;
+    }
+
+    .client_section .client_box.b-2 {
+        margin-top: 45px;
+    }
+
+
+    .info_section .col-lg-3 {
+        margin: 25px auto;
+        text-align: center;
+    }
+
+    .info_links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info_contact>div {
+        justify-content: center;
+    }
+
+    .info_social .social_container {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .hero_area {
+        height: auto;
+    }
+
+    .slider_section {
+        padding: 75px 0;
+    }
+
+    .client_section .carousel-control-prev,
+    .client_section .carousel-control-next {
+        display: none;
+    }
+
+    .contact_section form {
+        padding: 0;
+    }
+
+    .contact_section button {
+        margin: auto;
+    }
+
+
+    .footer_section p {
+        width: 100%;
+    }
+
+    .client_section .client_box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slider_section .img-box {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .slider_section .carousel-control-prev,
+    .slider_section .carousel-control-next {
+        display: none;
+    }
+
+    .skill_section .custom_heading-container {
+        justify-content: center;
+    }
+
+    .slider_section {
+        padding: 45px 0;
+    }
+
+    .portfolio_section .box {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 420px) {}
+
+@media (max-width: 360px) {}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: none !important;
+    }
+}
