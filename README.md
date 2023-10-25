@@ -37,18 +37,16 @@ root@ip-10-0-1-115:/home/ubuntu# cd /var/www
 
 root@ip-10-0-1-115:/var/www# ls -l
 total 12
-drwxr-xr-x 2 root root 4096 Oct  5 10:02 dev
 drwxr-xr-x 2 root root 4096 Oct  5 09:10 html
-drwxr-xr-x 2 root root 4096 Oct  5 10:04 qa
+
 root@ip-10-0-1-115:/var/www# groupadd www-data
 groupadd: group 'www-data' already exists
 root@ip-10-0-1-115:/var/www# ls -la
 total 20
 drwxr-xr-x  5 root root 4096 Oct  5 09:18 .
 drwxr-xr-x 14 root root 4096 Oct  5 09:10 ..
-drwxr-xr-x  2 root root 4096 Oct  5 10:02 dev
 drwxr-xr-x  2 root root 4096 Oct  5 09:10 html
-drwxr-xr-x  2 root root 4096 Oct  5 10:04 qa
+
 
 This can be useful when you want to grant a user specific permissions or access to resources associated with the "www-data" group, which is often used for web server-related tasks in Linux systems.
 The command essentially adds the user "jenkins" to the "www-data" group without removing them from any other groups they might be a part of. 
@@ -66,22 +64,20 @@ jenkins: This is the username of the user you want to modify.
 total 20
 drwxr-xr-x  5 root root 4096 Oct  5 09:18 .
 drwxr-xr-x 14 root root 4096 Oct  5 09:10 ..
-drwxr-xr-x  2 root root 4096 Oct  5 10:02 dev
 drwxr-xr-x  2 root root 4096 Oct  5 09:10 html
-drwxr-xr-x  2 root root 4096 Oct  5 10:04 qa
 
-# root@ip-10-0-1-115:/var/www# sudo chown jenkins:www-data dev
+
+# root@ip-10-0-1-115:/var/www# sudo chown jenkins:www-data html
 
 The sudo chown jenkins:www-data html command is used to change the ownership of a directory or file to the user "jenkins" and the group "www-data
-# root@ip-10-0-1-115:/var/www# sudo chown jenkins:www-data dev
+# root@ip-10-0-1-115:/var/www# sudo chown jenkins:www-data html
 
 # root@ip-10-0-1-115:/var/www# ls -la
 total 20
 drwxr-xr-x  5 root    root     4096 Oct  5 09:18 .
 drwxr-xr-x 14 root    root     4096 Oct  5 09:10 ..
-drwxr-xr-x  2 jenkins www-data 4096 Oct  5 10:02 dev
 drwxr-xr-x  2 root    root     4096 Oct  5 09:10 html
-drwxr-xr-x  2 root    root     4096 Oct  5 10:04 qa
+
 
 check to switch the to jenkins user
 root@ip-10-0-1-115:/var/www# su jenkins
@@ -94,14 +90,14 @@ jenkins@ip-10-0-1-115:/var/www$ exit
 exit
 
 
-command "sudo chmod -R 2771 dev/" recursively changes the permissions of the "dev" directory and its subdirectories, setting the permissions to 2771. The '2' at the beginning indicates the setgid permission, which means newly created files and directories within "dev" will inherit the group ownership of the parent directory, ensuring consistent group ownership. The '771' represents read, write, and execute permissions for the owner of the directory and group, while others have read and execute permissions. This command is often used for shared directories where multiple users need access and collaborative permissions management.
+command "sudo chmod -R 2771 html/" recursively changes the permissions of the "dev" directory and its subdirectories, setting the permissions to 2771. The '2' at the beginning indicates the setgid permission, which means newly created files and directories within "dev" will inherit the group ownership of the parent directory, ensuring consistent group ownership. The '771' represents read, write, and execute permissions for the owner of the directory and group, while others have read and execute permissions. This command is often used for shared directories where multiple users need access and collaborative permissions management.
 root@ip-10-0-1-115:/var/www# sudo chmod -R 2771 dev/
 
 
 •	 Shell Commands 
 
 rm /var/www/dev/index.html
-cp -r * /var/www/dev/
+cp -r * /var/www/html/
 
  ![image](https://github.com/Aseemakram19/website-ci-cd-pipline/assets/113539818/365d7197-1277-409c-89d1-26785de4fe25)
 
@@ -135,4 +131,4 @@ Pull request assigned, auto merge disabled, auto merge enabled, closed, converte
  Pushes
 Git push to a repository.
 unresolved.
-![image](https://github.com/Aseemakram19/website-ci-cd-pipline/assets/113539818/1c7e6416-a802-43d2-8de7-cdd7da1cff53)
+
