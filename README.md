@@ -20,11 +20,12 @@ PREREQUESTION :
 3.	CREATE JOB , FREE STYLE PROJECT
 4.	PROVIDE CREDENTIALS TO GITHUB INTEGRATION FOR PUBLIC/PRIVATE REPO
 
-2. CREATING A PIPELINE FOR DEVELOPMENT  BRANCH 
-Building in workspace /var/lib/jenkins/workspace/dev-telehealth-pipeline
+2. CREATING A PIPELINE FOR Deployment of our Website from Main BRANCH 
+Building in workspace /var/lib/jenkins/workspace/jenkins-cicd-yt
 
 Open mobaxterm & access severwith credentials.
-cd /var/lib/jenkins/workspace/dev-telehealth-pipeline
+# cd /var/lib/jenkins/workspace/jenkins-cicd-yt
+pipeline build appears
 
 Pipeline console failure 
 
@@ -39,13 +40,8 @@ root@ip-10-0-1-115:/var/www# ls -l
 total 12
 drwxr-xr-x 2 root root 4096 Oct  5 09:10 html
 
-root@ip-10-0-1-115:/var/www# groupadd www-data
+root@ip--:/var/www# groupadd www-data
 groupadd: group 'www-data' already exists
-root@ip-10-0-1-115:/var/www# ls -la
-total 20
-drwxr-xr-x  5 root root 4096 Oct  5 09:18 .
-drwxr-xr-x 14 root root 4096 Oct  5 09:10 ..
-drwxr-xr-x  2 root root 4096 Oct  5 09:10 html
 
 
 This can be useful when you want to grant a user specific permissions or access to resources associated with the "www-data" group, which is often used for web server-related tasks in Linux systems.
@@ -58,45 +54,46 @@ usermod: This is the command itself, used to modify user accounts.
 www-data: This is the name of the group you want to add the user "jenkins" to. In this case, you are adding the user "jenkins" to the "www-data" group.
 jenkins: This is the username of the user you want to modify.
 
-# root@ip-10-0-1-115:/var/www# usermod -aG www-data jenkins
+# cd /var/www
 
-# root@ip-10-0-1-115:/var/www# ls -la
+# root@-:/var/www# usermod -aG www-data jenkins
+
+# root@-:/var/www# ls -la
 total 20
 drwxr-xr-x  5 root root 4096 Oct  5 09:18 .
 drwxr-xr-x 14 root root 4096 Oct  5 09:10 ..
 drwxr-xr-x  2 root root 4096 Oct  5 09:10 html
 
 
-# root@ip-10-0-1-115:/var/www# sudo chown jenkins:www-data html
+# root@ip-:/var/www# sudo chown jenkins:www-data html
 
 The sudo chown jenkins:www-data html command is used to change the ownership of a directory or file to the user "jenkins" and the group "www-data
-# root@ip-10-0-1-115:/var/www# sudo chown jenkins:www-data html
+# root@ip-:/var/www# sudo chown jenkins:www-data html
 
-# root@ip-10-0-1-115:/var/www# ls -la
+# root@ip-:/var/www# ls -la
 total 20
 drwxr-xr-x  5 root    root     4096 Oct  5 09:18 .
-drwxr-xr-x 14 root    root     4096 Oct  5 09:10 ..
-drwxr-xr-x  2 root    root     4096 Oct  5 09:10 html
-
+drwxr-xr-x 14 root    root     4096 Oct  5 09:10 .. 
+drwxrws--x 2 jenkins www-data  4096 Oct  5 09:10 html
 
 check to switch the to jenkins user
-root@ip-10-0-1-115:/var/www# su jenkins
+root@ip-:/var/www# su jenkins
 
-jenkins@ip-10-0-1-115:/var/www$ cd dev
-jenkins@ip-10-0-1-115:/var/www/dev$ ls
+jenkins@ip-:/var/www$ cd html
+jenkins@ip-:/var/www/html$ ls
 index.html
-jenkins@ip-10-0-1-115:/var/www/dev$ cd ..
-jenkins@ip-10-0-1-115:/var/www$ exit
+jenkins@ip--:/var/www/html$ cd ..
+jenkins@ip-:/var/www$ exit
 exit
 
-
+# root@ip-:/var/www# sudo chmod -R 2771 html/
 command "sudo chmod -R 2771 html/" recursively changes the permissions of the "dev" directory and its subdirectories, setting the permissions to 2771. The '2' at the beginning indicates the setgid permission, which means newly created files and directories within "dev" will inherit the group ownership of the parent directory, ensuring consistent group ownership. The '771' represents read, write, and execute permissions for the owner of the directory and group, while others have read and execute permissions. This command is often used for shared directories where multiple users need access and collaborative permissions management.
-root@ip-10-0-1-115:/var/www# sudo chmod -R 2771 dev/
+
 
 
 •	 Shell Commands 
 
-rm /var/www/dev/index.html
+rm /var/www/html/index.html
 cp -r * /var/www/html/
 
  ![image](https://github.com/Aseemakram19/website-ci-cd-pipline/assets/113539818/365d7197-1277-409c-89d1-26785de4fe25)
@@ -110,7 +107,7 @@ Recent Deliveries
 We’ll send a POST request to the URL below with details of any subscribed events. You can also specify which data format you’d like to receive (JSON, x-www-form-urlencoded, etc). More information can be found in our developer documentation.
 
 	Payload URL
-http://52.200.58.29:8080/github-webhook/
+http://ip:8080/github-webhook/
 
 	Content type
 
